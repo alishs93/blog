@@ -1,1 +1,1 @@
-<iframe src="index.html" style="width:100%;hight:100vh;"></iframe>
+# Go to index.html
