@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Auto Commit & Push",
+            "type": "shell",
+            "command": "$commitMessage = 'Auto Commit - $(Get-Date -Format \"yyyy-MM-dd HH:mm:ss\")'; git add .; git commit -m \"$commitMessage\"; git push origin main",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
