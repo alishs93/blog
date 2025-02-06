@@ -1,5 +1,5 @@
-const online = navigator.onLine;
-const lineh=document.getElementById("");
+const online = false;
+const lineh=document.getElementById("offline");
 if (!online) {
     onofflined();
 }else{
@@ -7,11 +7,13 @@ if (!online) {
 }
 
 function onofflined() {
-    
+    lineh.style.display="block";
+    document.querySelector("body").style.overflow="hidden";
 }
 
 function ononlined() {
-    
+    lineh.style.display="none";
+    document.querySelector("body").style.overflow="auto";
 }
 
 
