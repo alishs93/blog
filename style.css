@@ -28,4 +28,10 @@ body {
     text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.6);
 }
 
-offline
+#offline{
+    position: fixed;
+    z-index: 5000;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
