@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 
-:root{
+:root {
     --animation-duration: 2s;
 }
 
@@ -11,7 +11,7 @@
 }
 
 body {
-    
+    margin: 0;
 }
 
 .section {
@@ -26,5 +26,6 @@ body {
     margin-top: 10px;
     margin-bottom: 20px;
     text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.6);
-    animation: tada;
 }
+
+offline
