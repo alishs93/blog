@@ -8,3 +8,8 @@
 body {
     text-align: center;
 }
+
+.section{
+    height: 100vh;
+    border-bottom: 5px solid black;
+}
