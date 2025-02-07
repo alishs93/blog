@@ -52,10 +52,6 @@ document.getElementById("save").onclick = function () {
     saveData(document.getElementById("link").value, document.getElementById("number").value);
 };
 
-document.getElementById("play").onclick = function () {
-    link=getData(document.getElementById("number2").value);
-    location.href="play.html?url="+link;
-};
 
 // Check database when select changes
 document.getElementById("number").addEventListener("change", function () {

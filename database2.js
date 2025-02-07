@@ -19,12 +19,13 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 
-
 // Function to get data
-function getData(number) {
-    get(child(ref(database), "links/nt" + number)).then((snapshot) => {
+async function getData(number) {
+    try {
+        const snapshot = await get(child(ref(database), "links/nt" + number));
+
         if (snapshot.exists()) {
-            console.log("📢 لینک ذخیره‌شده:", snapshot.val().url);
+            console.log("📢 لینک ذخیره‌شده:", snapshot.val().url);  // نمایش لینک در کنسول
             document.getElementById("link").value = snapshot.val().url; // مقداردهی خودکار به input
             return snapshot.val().url; // بازگشت لینک از دیتابیس
         } else {
@@ -32,14 +33,24 @@ function getData(number) {
             document.getElementById("link").value = ""; // اگر داده نبود، input خالی شود
             return null; // اگر داده نبود، null برمی‌گرداند
         }
-    }).catch((error) => {
+    } catch (error) {
         console.error("❌ خطا در دریافت اطلاعات:", error);
         return null; // در صورت بروز خطا، null برمی‌گرداند
-    });
+    }
 }
 
+// دکمه "دیدن فیلم" کلیک می‌شود
+document.getElementById("play").onclick = async function () {
+    const number = document.getElementById("number2").value;
+    console.log("📢 شماره انتخاب شده:", number); // نمایش شماره انتخاب شده در کنسول
 
-document.getElementById("play").onclick = function () {
-    link=getData(document.getElementById("number2").value);
-    location.href="play.html?url="+link;
+    const link = await getData(number);
+    console.log("📢 لینک دریافتی:", link); // نمایش لینک دریافتی از getData
+
+    if (link) {
+        console.log("📢 هدایت به صفحه جدید با لینک:", link);
+        location.href = "play.html?url=" + encodeURIComponent(link); // به صفحه جدید هدایت می‌کند
+    } else {
+        alert("❌ لینک ویدیو یافت نشد!");
+    }
 };
