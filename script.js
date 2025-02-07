@@ -1,4 +1,4 @@
-const online = false;
+const online = navigator.onLine;
 const lineh=document.getElementById("offline");
 if (!online) {
     onofflined();
