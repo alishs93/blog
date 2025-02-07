@@ -2,51 +2,50 @@
 @import url("data:text/css;base64,LyogbGF0aW4gKi8NCkBmb250LWZhY2Ugew0KICBmb250LWZhbWlseTogJ0RlbGl1cyc7DQogIGZvbnQtc3R5bGU6IG5vcm1hbDsNCiAgZm9udC13ZWlnaHQ6IDQwMDsNCiAgZm9udC1kaXNwbGF5OiBzd2FwOw0KICBzcmM6IHVybChodHRwczovL2ZvbnRzLmdzdGF0aWMuY29tL3MvZGVsaXVzL3YxOS9QTl94UmZLMHBXXzllMXJkWnNnXy53b2ZmMikgZm9ybWF0KCd3b2ZmMicpOw0KICB1bmljb2RlLXJhbmdlOiBVKzAwMDAtMDBGRiwgVSswMTMxLCBVKzAxNTItMDE1MywgVSswMkJCLTAyQkMsIFUrMDJDNiwgVSswMkRBLCBVKzAyREMsIFUrMDMwNCwgVSswMzA4LCBVKzAzMjksIFUrMjAwMC0yMDZGLCBVKzIwQUMsIFUrMjEyMiwgVSsyMTkxLCBVKzIxOTMsIFUrMjIxMiwgVSsyMjE1LCBVK0ZFRkYsIFUrRkZGRDsNCn0=");
 
 :root {
-    --animation-duration: 2s;
+    --animation-duration: 2s
 }
 
 * {
-    font-family: "Delius", "Alexandria" !important;
-    text-align: center;
+    font-family: Delius, Alexandria !important;
+    text-align: center
 }
 
 body {
     margin: 0;
-    overflow: hidden;
-    
+    overflow: hidden
 }
 
 .section {
     height: 100vh;
-    border-bottom: 5px solid black;
-    box-shadow: 10px 10px 376px -9px rgba(0, 0, 0, 0.18) inset;
-    -webkit-box-shadow: 10px 10px 376px -9px rgba(0, 0, 0, 0.18) inset;
-    -moz-box-shadow: 10px 10px 376px -9px rgba(0, 0, 0, 0.18) inset;
+    border-bottom: 5px solid #000;
+    box-shadow: 10px 10px 376px -9px rgba(0, 0, 0, .18) inset;
+    -webkit-box-shadow: 10px 10px 376px -9px rgba(0, 0, 0, .18) inset;
+    -moz-box-shadow: 10px 10px 376px -9px rgba(0, 0, 0, .18) inset
 }
 
 .section h1 {
     margin-top: 10px;
     margin-bottom: 20px;
-    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.6);
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, .6)
 }
 
-#offline{
+#offline {
     position: fixed;
     z-index: 5000;
     height: 100%;
     width: 100%;
-    background-color: white;
+    background-color: #fff
 }
 
-div#offline div.center{
+div#offline div.center {
     position: absolute;
     text-align: center;
     margin: auto;
     top: 40%;
     bottom: 40%;
-    left: 40%;
-    right: 40%;
-    border: 1px solid black;
-    width: 20%;
-    height: 40%;
+    left: 100px;
+    right: 100px;
+    border: 1px solid #000;
+    width: 200px;
+    height: 200px
 }
