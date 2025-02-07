@@ -18,16 +18,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-// Function to save data
-function saveData(link, number) {
-    set(ref(database, "links/nt" + number), {
-        url: link
-    }).then(() => {
-        alert("✅ اطلاعات ذخیره شد!");
-    }).catch((error) => {
-        alert("❌ خطا در ذخیره اطلاعات: " + error.message);
-    });
-}
+
 
 // Function to get data
 function getData(number) {
@@ -47,18 +38,8 @@ function getData(number) {
     });
 }
 
-// Set event listener for button click
-document.getElementById("save").onclick = function () {
-    saveData(document.getElementById("link").value, document.getElementById("number").value);
-};
 
 document.getElementById("play").onclick = function () {
     link=getData(document.getElementById("number2").value);
     location.href="play.html?url="+link;
 };
-
-// Check database when select changes
-document.getElementById("number").addEventListener("change", function () {
-    const selectedNumber = this.value;
-    getData(selectedNumber); // بررسی دیتابیس هنگام تغییر مقدار select
-});

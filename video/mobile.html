@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.rtlcss.com/bootstrap/v4.5.3/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <script src="/database.js" type="module"></script>
+    <script src="/database.js" type="module" defer></script>
 </head>
 <body style="zoom:200%;text-align: center;">
     <br><br>
@@ -23,10 +23,10 @@
         <option value="5">5</option>
     </select>
     <br><br>
-    <label for="link" >لینک:</label>
+    <label for="link">لینک:</label>
     <br>
-    <input type="text" id="link" class="btn btn-info form-control"  style="width:80%;">
+    <input type="text" id="link" class="btn btn-info form-control" style="width:80%;">
     <br><br>
-    <button class="btn btn-danger">ذخیره</button>
+    <button class="btn btn-danger" id="save">ذخیره</button>
 </body>
 </html>

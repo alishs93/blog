@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,20 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.rtlcss.com/bootstrap/v4.5.3/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <script src="/database.js" type="module"></script>
+    <script src="/database.js" type="module" defer></script>
 </head>
+
 <body style="zoom:200%;text-align: center;">
     <br><br>
-    <button class="btn btn-info" onclick="location.href='mobile.html'">در گوشی هستم</button>
+    <select id="number2" class="btn btn-info form-control" style="width: 30%;">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
     <br><br>
-    <button class="btn btn-danger" onclick="location.href='tv.html'">در تلویزیون هستم</button>
-    <br><br>
+    <button class="btn btn-danger" id="play">دیدن فیلم</button>
 </body>
+
 </html>
