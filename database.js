@@ -1,58 +1,65 @@
-// Import Firebase SDKs
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
-import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-database.js";
-
-// Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyAuxgjBntk28x7cfai582vRN91CyaCkuqg",
-    authDomain: "bloggit-4f6a3.firebaseapp.com",
-    databaseURL: "https://bloggit-4f6a3-default-rtdb.firebaseio.com",
-    projectId: "bloggit-4f6a3",
-    storageBucket: "bloggit-4f6a3.firebasestorage.app",
-    messagingSenderId: "989685334083",
-    appId: "1:989685334083:web:74af28866af0844d6454f6",
-    measurementId: "G-R7G6PL229Y"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
-
-// Function to save data
+// Function to save data to Google Sheets via Apps Script
 function saveData(link, number) {
-    set(ref(database, "links/nt" + number), {
+    const url = 'https://script.google.com/macros/s/AKfycbwWOumHNXuSZdkzFhGtTWt_uxIeSZ3eVXIZ8TV1_Xh0xWSEdmZQgYPiFHUXvkxey8g/exec';
+    const params = {
+        action: 'insert',  // عملیات insert برای ذخیره‌سازی داده
+        number: number,
         url: link
-    }).then(() => {
-        alert("✅ اطلاعات ذخیره شد!");
-    }).catch((error) => {
-        alert("❌ خطا در ذخیره اطلاعات: " + error.message);
-    });
+    };
+
+    fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(params),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.text())
+    .then(result => alert(result)) // نتیجه درخواست را نمایش می‌دهیم
+    .catch(error => alert("❌ خطا در ذخیره داده: " + error.message));
 }
 
-// Function to get data
-function getData(number) {
+// Function to get data from Google Sheets via Apps Script
+async function getData(number) {
     document.getElementById("link").value = "درحال یافتن لینک...";
-    get(child(ref(database), "links/nt" + number)).then((snapshot) => {
-        if (snapshot.exists()) {
-            console.log("📢 لینک ذخیره‌شده:", snapshot.val().url);
-            document.getElementById("link").value = snapshot.val().url; // مقداردهی خودکار به input
-            return snapshot.val().url; // بازگشت لینک از دیتابیس
+    const url = 'https://script.google.com/macros/s/AKfycbwWOumHNXuSZdkzFhGtTWt_uxIeSZ3eVXIZ8TV1_Xh0xWSEdmZQgYPiFHUXvkxey8g/exec';
+    const params = {
+        action: 'get',  // عملیات get برای دریافت داده
+        number: number
+    };
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(params),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const data = await response.text();
+        
+        if (data !== "❌ اطلاعات یافت نشد!") {
+            const result = JSON.parse(data);
+            console.log("📢 لینک ذخیره‌شده:", result.url);
+            document.getElementById("link").value = result.url; // مقداردهی خودکار به input
+            return result.url; // بازگشت لینک از دیتابیس
         } else {
             console.log("❌ اطلاعات یافت نشد!");
             document.getElementById("link").value = ""; // اگر داده نبود، input خالی شود
             return null; // اگر داده نبود، null برمی‌گرداند
         }
-    }).catch((error) => {
+    } catch (error) {
         console.error("❌ خطا در دریافت اطلاعات:", error);
         return null; // در صورت بروز خطا، null برمی‌گرداند
-    });
+    }
 }
 
 // Set event listener for button click
 document.getElementById("save").onclick = function () {
-    saveData(document.getElementById("link").value, document.getElementById("number").value);
+    const link = document.getElementById("link").value;
+    const number = document.getElementById("number").value;
+    saveData(link, number);
 };
-
 
 // Check database when select changes
 const selectedNumber = document.getElementById("number").value;

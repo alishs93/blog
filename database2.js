@@ -1,34 +1,27 @@
-// Import Firebase SDKs
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
-import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-database.js";
-
-// Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyAuxgjBntk28x7cfai582vRN91CyaCkuqg",
-    authDomain: "bloggit-4f6a3.firebaseapp.com",
-    databaseURL: "https://bloggit-4f6a3-default-rtdb.firebaseio.com",
-    projectId: "bloggit-4f6a3",
-    storageBucket: "bloggit-4f6a3.firebasestorage.app",
-    messagingSenderId: "989685334083",
-    appId: "1:989685334083:web:74af28866af0844d6454f6",
-    measurementId: "G-R7G6PL229Y"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
-
-
-// Function to get data
+// Function to get data from Google Sheets via Apps Script
 async function getData(number) {
     document.getElementById("link").value = "درحال یافتن لینک...";
-    try {
-        const snapshot = await get(child(ref(database), "links/nt" + number));
+    const url = 'https://script.google.com/macros/s/AKfycbwWOumHNXuSZdkzFhGtTWt_uxIeSZ3eVXIZ8TV1_Xh0xWSEdmZQgYPiFHUXvkxey8g/exec';
+    const params = {
+        action: 'get',  // عملیات get برای دریافت داده
+        number: number
+    };
 
-        if (snapshot.exists()) {
-            console.log("📢 لینک ذخیره‌شده:", snapshot.val().url);  // نمایش لینک در کنسول
-            document.getElementById("link").value = snapshot.val().url; // مقداردهی خودکار به input
-            return snapshot.val().url; // بازگشت لینک از دیتابیس
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(params),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const data = await response.text();
+        
+        if (data !== "❌ اطلاعات یافت نشد!") {
+            const result = JSON.parse(data);
+            console.log("📢 لینک ذخیره‌شده:", result.url);
+            document.getElementById("link").value = result.url; // مقداردهی خودکار به input
+            return result.url; // بازگشت لینک از دیتابیس
         } else {
             console.log("❌ اطلاعات یافت نشد!");
             document.getElementById("link").value = ""; // اگر داده نبود، input خالی شود
@@ -48,7 +41,7 @@ document.getElementById("play").onclick = async function () {
     const link = await getData(number);
     console.log("📢 لینک دریافتی:", link); // نمایش لینک دریافتی از getData
 
-    if (link && number!="") {
+    if (link && number !== "") {
         console.log("📢 هدایت به صفحه جدید با لینک:", link);
         location.href = "play.html?url=" + decodeURIComponent(link); // به صفحه جدید هدایت می‌کند
     } else {
@@ -64,4 +57,4 @@ document.getElementById("number2").addEventListener("change", function () {
     getData(selectedNumber); // بررسی دیتابیس هنگام تغییر مقدار select
 });
 
-document.getElementById("number2").change()
+document.getElementById("number2").change();
