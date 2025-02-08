@@ -10,13 +10,14 @@ function saveData(link, number) {
     fetch(url, {
         method: 'POST',
         body: JSON.stringify(params),
+        mode: "cors",  // مهم
         headers: {
             'Content-Type': 'application/json'
         }
     })
-    .then(response => response.text())
-    .then(result => alert(result)) // نتیجه درخواست را نمایش می‌دهیم
-    .catch(error => alert("❌ خطا در ذخیره داده: " + error.message));
+        .then(response => response.text())
+        .then(result => alert(result)) // نتیجه درخواست را نمایش می‌دهیم
+        .catch(error => alert("❌ خطا در ذخیره داده: " + error.message));
 }
 
 // Function to get data from Google Sheets via Apps Script
@@ -32,15 +33,16 @@ async function getData(number) {
         const response = await fetch(url, {
             method: 'POST',
             body: JSON.stringify(params),
+            mode: "cors",  // مهم
             headers: {
                 'Content-Type': 'application/json'
             }
         });
         const data = await response.text();
-        
+
         if (data !== "❌ اطلاعات یافت نشد!") {
             const result = JSON.parse(data);
-            console.log("📢 لینک ذخیره‌شده:"+ result.url);
+            console.log("📢 لینک ذخیره‌شده:" + result.url);
             document.getElementById("link").value = result.url; // مقداردهی خودکار به input
             return result.url; // بازگشت لینک از دیتابیس
         } else {
@@ -49,7 +51,7 @@ async function getData(number) {
             return null; // اگر داده نبود، null برمی‌گرداند
         }
     } catch (error) {
-        console.error("❌ خطا در دریافت اطلاعات:"+ error);
+        console.error("❌ خطا در دریافت اطلاعات:" + error);
         return null; // در صورت بروز خطا، null برمی‌گرداند
     }
 }
