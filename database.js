@@ -31,6 +31,7 @@ function saveData(link, number) {
 
 // Function to get data
 function getData(number) {
+    document.getElementById("link").value = "درحال یافتن لینک...";
     get(child(ref(database), "links/nt" + number)).then((snapshot) => {
         if (snapshot.exists()) {
             console.log("📢 لینک ذخیره‌شده:", snapshot.val().url);
@@ -54,6 +55,8 @@ document.getElementById("save").onclick = function () {
 
 
 // Check database when select changes
+const selectedNumber = document.getElementById("number").value;
+getData(selectedNumber); // بررسی دیتابیس هنگام تغییر مقدار select
 document.getElementById("number").addEventListener("change", function () {
     const selectedNumber = this.value;
     getData(selectedNumber); // بررسی دیتابیس هنگام تغییر مقدار select

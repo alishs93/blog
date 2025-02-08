@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
@@ -16,14 +16,16 @@
 <body style="zoom:200%;text-align: center;">
     <br><br>
     <select id="number2" class="btn btn-info form-control" style="width: 30%;">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
+        <optgroup label="انتخاب عدد">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </optgroup>
     </select>
     <br><br>
-    <input type="text" id="link" class="btn btn-info form-control" style="width:80%;">
+    <input type="text" id="link" class="btn btn-info form-control" disabled style="width:80%;opacity: 100%;">
     <br><br>
     <button class="btn btn-danger" id="play">دیدن فیلم</button>
 </body>

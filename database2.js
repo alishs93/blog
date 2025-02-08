@@ -21,6 +21,7 @@ const database = getDatabase(app);
 
 // Function to get data
 async function getData(number) {
+    document.getElementById("link").value = "درحال یافتن لینک...";
     try {
         const snapshot = await get(child(ref(database), "links/nt" + number));
 
@@ -43,14 +44,24 @@ async function getData(number) {
 document.getElementById("play").onclick = async function () {
     const number = document.getElementById("number2").value;
     console.log("📢 شماره انتخاب شده:", number); // نمایش شماره انتخاب شده در کنسول
-
+    
     const link = await getData(number);
     console.log("📢 لینک دریافتی:", link); // نمایش لینک دریافتی از getData
 
-    if (link) {
+    if (link && number!="") {
         console.log("📢 هدایت به صفحه جدید با لینک:", link);
-        location.href = "play.html?url=" + encodeURIComponent(link); // به صفحه جدید هدایت می‌کند
+        location.href = "play.html?url=" + decodeURIComponent(link); // به صفحه جدید هدایت می‌کند
     } else {
         alert("❌ لینک ویدیو یافت نشد!");
     }
 };
+
+// Check database when select changes
+const selectedNumber = document.getElementById("number2").value;
+getData(selectedNumber); // بررسی دیتابیس هنگام تغییر مقدار select
+document.getElementById("number2").addEventListener("change", function () {
+    const selectedNumber = this.value;
+    getData(selectedNumber); // بررسی دیتابیس هنگام تغییر مقدار select
+});
+
+document.getElementById("number2").change()
