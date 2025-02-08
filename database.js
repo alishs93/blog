@@ -40,7 +40,7 @@ async function getData(number) {
         
         if (data !== "❌ اطلاعات یافت نشد!") {
             const result = JSON.parse(data);
-            console.log("📢 لینک ذخیره‌شده:", result.url);
+            console.log("📢 لینک ذخیره‌شده:"+ result.url);
             document.getElementById("link").value = result.url; // مقداردهی خودکار به input
             return result.url; // بازگشت لینک از دیتابیس
         } else {
@@ -49,7 +49,7 @@ async function getData(number) {
             return null; // اگر داده نبود، null برمی‌گرداند
         }
     } catch (error) {
-        console.error("❌ خطا در دریافت اطلاعات:", error);
+        console.error("❌ خطا در دریافت اطلاعات:"+ error);
         return null; // در صورت بروز خطا، null برمی‌گرداند
     }
 }
