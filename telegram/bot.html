@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telegram Bot - Reza Karimpour</title>
+    <style>
+        body {font-family: Arial, sans-serif; padding: 20px;}
+        .container {max-width: 800px; margin: 0 auto;}
+        pre {background: #f4f4f4; padding: 10px; border-radius: 5px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ربات تلگرام - رضا کریم پور</h1>
+        <p>آموزش کامل در یوتیوب: 
+            <a href="https://youtube.com/@itsalisina" target="_blank">
+                youtube.com/@itsalisina
+            </a>
+        </p>
+        
+        <div id="status"></div>
+        
+        <script>
+            const BOT_TOKEN = '8138529310:AAGqKZ1EWLzOdvEN5k84ReGDOuc2YRus7eA';
+            const API_URL = `https://api.telegram.org/bot${BOT_TOKEN}/`;
+            const ADMIN_ID = '7452364002';
+
+            async function handleWebhook(request) {
+                const update = await request.json();
+                const chatId = update.message?.chat?.id;
+                const text = update.message?.text;
+                const msgId = update.message?.message_id;
+
+                if(text === "/start") {
+                    await sendMessage(chatId, 
+                        `سلام به ربات Root One خوش آمدید!\nhttps://youtube.com/@itsalisina`, 
+                        msgId
+                    );
+                } else if(text === "/amoozesh") {
+                    await sendPhoto(chatId, 
+                        "https://cdn-icons-png.flaticon.com/512/4712/4712109.png",
+                        "این عکس یک ربات است"
+                    );
+                } else {
+                    await sendMessage(chatId, "دستور نامعتبر است");
+                }
+            }
+
+            async function sendMessage(chatId, text, replyId = null) {
+                const params = {
+                    chat_id: chatId,
+                    text: text,
+                    disable_web_page_preview: true
+                };
+                
+                if(replyId) params.reply_to_message_id = replyId;
+                
+                const response = await fetch(`${API_URL}sendMessage`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(params)
+                });
+                
+                return response.json();
+            }
+
+            async function sendPhoto(chatId, photoUrl, caption) {
+                const params = {
+                    chat_id: chatId,
+                    photo: photoUrl,
+                    caption: caption,
+                    has_spoiler: true
+                };
+                
+                const response = await fetch(`${API_URL}sendPhoto`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(params)
+                });
+                
+                return response.json();
+            }
+
+            // Handle Webhook
+            if (window.location.pathname === '/webhook') {
+                addEventListener('fetch', event => {
+                    event.respondWith(handleWebhook(event.request));
+                });
+            } else {
+                document.getElementById('status').innerHTML = 
+                    '<p>ربات فعال است! از تلگرام با ربات تعامل کنید.</p>';
+            }
+        </script>
+    </div>
+</body>
+</html>
