@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Telegram Bot - Reza Karimpour</title>
+    <title>Telegram Bot - GET Method</title>
     <style>
         body {font-family: Arial, sans-serif; padding: 20px;}
         .container {max-width: 800px; margin: 0 auto;}
@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>ربات تلگرام - رضا کریم پور</h1>
+        <h1>ربات تلگرام - نسخه GET</h1>
         <p>آموزش کامل در یوتیوب: 
             <a href="https://youtube.com/@itsalisina" target="_blank">
                 youtube.com/@itsalisina
@@ -22,7 +22,6 @@
         <script>
             const BOT_TOKEN = '8138529310:AAGqKZ1EWLzOdvEN5k84ReGDOuc2YRus7eA';
             const API_URL = `https://api.telegram.org/bot${BOT_TOKEN}/`;
-            const ADMIN_ID = '7452364002';
 
             async function handleWebhook(request) {
                 const update = await request.json();
@@ -31,56 +30,42 @@
                 const msgId = update.message?.message_id;
 
                 if(text === "/start") {
-                    await sendMessage(chatId, 
-                        `سلام به ربات Root One خوش آمدید!\nhttps://youtube.com/@itsalisina`, 
+                    await sendMessageGET(
+                        chatId,
+                        `سلام به ربات Root One خوش آمدید!\nhttps://youtube.com/@itsalisina`,
                         msgId
                     );
                 } else if(text === "/amoozesh") {
-                    await sendPhoto(chatId, 
+                    await sendPhotoGET(
+                        chatId,
                         "https://cdn-icons-png.flaticon.com/512/4712/4712109.png",
                         "این عکس یک ربات است"
                     );
                 } else {
-                    await sendMessage(chatId, "دستور نامعتبر است");
+                    await sendMessageGET(chatId, "دستور نامعتبر است");
                 }
             }
 
-            async function sendMessage(chatId, text, replyId = null) {
-                const params = {
-                    chat_id: chatId,
-                    text: text,
-                    disable_web_page_preview: true
-                };
+            /* متد ارسال پیام با GET */
+            async function sendMessageGET(chatId, text, replyId = null) {
+                let url = `${API_URL}sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}&disable_web_page_preview=true`;
                 
-                if(replyId) params.reply_to_message_id = replyId;
+                if(replyId) {
+                    url += `&reply_to_message_id=${replyId}`;
+                }
                 
-                const response = await fetch(`${API_URL}sendMessage`, {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify(params)
-                });
-                
+                const response = await fetch(url);
                 return response.json();
             }
 
-            async function sendPhoto(chatId, photoUrl, caption) {
-                const params = {
-                    chat_id: chatId,
-                    photo: photoUrl,
-                    caption: caption,
-                    has_spoiler: true
-                };
-                
-                const response = await fetch(`${API_URL}sendPhoto`, {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify(params)
-                });
-                
+            /* متد ارسال عکس با GET */
+            async function sendPhotoGET(chatId, photoUrl, caption) {
+                const url = `${API_URL}sendPhoto?chat_id=${chatId}&photo=${encodeURIComponent(photoUrl)}&caption=${encodeURIComponent(caption)}&has_spoiler=true`;
+                const response = await fetch(url);
                 return response.json();
             }
 
-            // Handle Webhook
+            // مدیریت وب‌هوک
             if (window.location.pathname === '/webhook') {
                 addEventListener('fetch', event => {
                     event.respondWith(handleWebhook(event.request));
