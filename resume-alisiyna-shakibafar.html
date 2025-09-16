@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>علی سینا شکیبافر - توسعه‌دهندهٔ فول‌استک و طراح رابط کاربری</title>
+    <meta name="description"
+        content="رزومهٔ علی سینا شکیبافر، توسعه‌دهندهٔ فول‌استک با تخصص در React، PHP، Laravel و طراحی رابط کاربری. متخصص توسعهٔ وب مدرن و دوستدار تجربهٔ کاربری بهینه.">
+    <meta name="author" content="علی سینا شکیبافر">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="علی سینا شکیبافر - توسعه‌دهندهٔ فول‌استک">
+    <meta property="og:description"
+        content="رزومهٔ حرفه‌ای توسعه‌دهندهٔ فول‌استک با تجربهٔ گسترده در تکنولوژی‌های مدرن وب">
+    <meta property="og:type" content="profile">
+    <meta property="og:locale" content="fa_IR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="علی سینا شکیبافر - توسعه‌دهندهٔ فول‌استک">
+    <meta name="twitter:description" content="رزومهٔ حرفه‌ای توسعه‌دهندهٔ فول‌استک">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "علی سینا شکیبافر",
+      "jobTitle": "توسعه‌دهندهٔ فول‌استک",
+      "description": "توسعه‌دهندهٔ فول‌استک با تجربهٔ گسترده در React، PHP، Laravel و طراحی رابط کاربری",
+      "url": "https://example.com",
+      "email": "alisinashakibafar@example.com",
+      "knowsAbout": ["JavaScript", "React", "PHP", "Laravel", "UI/UX Design", "Full-Stack Development"]
+    }
+    </script>
+
+    <style>
+        /* 
+        ==============================================
+        راهنمای شخصی‌سازی:
+        1. تغییر نام: خط 17 و 332 را ویرایش کنید
+        2. تغییر عکس پروفایل: SVG در خط 380 را جایگزین کنید
+        3. تغییر مهارت‌ها: بخش skills در خط 450 را ویرایش کنید
+        4. لینک دانلود PDF: خط 340 را ویرایش کنید
+        ==============================================
+        */
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+            --max-width: 1200px;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #60a5fa;
+            --secondary-color: #3b82f6;
+            --accent-color: #93c5fd;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --bg-primary: #111827;
+            --bg-secondary: #1f2937;
+            --border-color: #374151;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            direction: rtl;
+            text-align: right;
+            font-size: 16px;
+        }
+
+        /* Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            right: 6px;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        /* Container */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-primary);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .theme-toggle:hover,
+        .theme-toggle:focus {
+            background: var(--primary-color);
+            color: white;
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        /* Navigation */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-primary);
+            padding: 0.5rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            background: var(--bg-secondary);
+            color: var(--primary-color);
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        /* Main Content */
+        main {
+            padding: 2rem 0;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        section:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        section:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        section:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        section:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            border: 4px solid var(--primary-color);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .profile-photo svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .hero .job-title {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn:hover,
+        .btn:focus {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .social-links a:hover,
+        .social-links a:focus {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.1);
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-item {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .skill-percentage {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+            width: 0;
+        }
+
+        /* Experience & Education */
+        .timeline {
+            position: relative;
+            padding-right: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            right: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            margin-right: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            right: -2.5rem;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            border: 3px solid var(--bg-primary);
+        }
+
+        .timeline-header {
+            margin-bottom: 1rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-company {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding-right: 1rem;
+        }
+
+        .timeline-content li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .timeline-content li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            right: -1rem;
+            font-weight: bold;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .project-links a:hover,
+        .project-links a:focus {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        /* Contact Form */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover,
+        .contact-item a:focus {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: inherit;
+            transition: var(--transition);
+            direction: rtl;
+            text-align: right;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .error-message {
+            color: #dc2626;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .success-message {
+            background: #10b981;
+            color: white;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            padding: 2rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-content {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-content a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer-content a:hover,
+        .footer-content a:focus {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .timeline {
+                padding-right: 0;
+            }
+
+            .timeline::before {
+                display: none;
+            }
+
+            .timeline-item {
+                margin-right: 0;
+            }
+
+            .timeline-item::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 2rem 0;
+            }
+
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+
+            .theme-toggle,
+            .cta-buttons,
+            .contact-form,
+            nav {
+                display: none !important;
+            }
+
+            body {
+                font-size: 12pt;
+                color: black;
+            }
+
+            .hero,
+            .timeline-item,
+            .project-card,
+            .skill-item {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="skip-link">پرش به محتوای اصلی</a>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <!-- لوگو/نام - برای تغییر نام، این قسمت را ویرایش کنید -->
+                <a href="#hero" class="logo">علی سینا شکیبافر</a>
+
+                <!-- Navigation -->
+                <nav role="navigation" aria-label="منوی اصلی">
+                    <ul>
+                        <li><a href="#about">درباره من</a></li>
+                        <li><a href="#skills">مهارت‌ها</a></li>
+                        <li><a href="#experience">تجربه</a></li>
+                        <li><a href="#projects">پروژه‌ها</a></li>
+                        <li><a href="#contact">تماس</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="تغییر حالت تم">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section id="hero" class="hero" aria-labelledby="hero-title">
+                <!-- عکس پروفایل - برای تغییر، SVG زیر را جایگزین کنید -->
+                <div class="profile-photo">
+                    <svg viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="75" cy="75" r="75" fill="#e5e7eb" />
+                        <circle cx="75" cy="60" r="25" fill="#9ca3af" />
+                        <ellipse cx="75" cy="130" rx="40" ry="30" fill="#9ca3af" />
+                    </svg>
+                </div>
+
+                <h1 id="hero-title">علی سینا شکیبافر</h1>
+                <p class="job-title">توسعه‌دهندهٔ فول‌استک و طراح رابط کاربری</p>
+                <p class="tagline">خلق تجربیات دیجیتال فوق‌العاده با تکنولوژی‌های مدرن و طراحی کاربرمحور</p>
+
+                <!-- CTA Buttons - برای تغییر لینک PDF، خط زیر را ویرایش کنید -->
+                <div class="cta-buttons">
+                    <a href="#" id="download-pdf" class="btn btn-primary" download="resume-alisiyna-shakibafar.pdf">
+                        📄 دانلود رزومه (PDF)
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">📞 تماس با من</a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="social-links">
+                    <a href="https://github.com/alisinashakibafar" aria-label="گیت‌هاب" title="گیت‌هاب">🔗</a>
+                    <a href="https://linkedin.com/in/alisinashakibafar" aria-label="لینکدین" title="لینکدین">💼</a>
+                    <a href="https://twitter.com/alisinashakibafar" aria-label="توییتر" title="توییتر">🐦</a>
+                    <a href="mailto:alisinashakibafar@example.com" aria-label="ایمیل" title="ایمیل">📧</a>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" aria-labelledby="about-title">
+                <div class="section-header">
+                    <h2 id="about-title">درباره من</h2>
+                </div>
+                <div class="about-content">
+                    <p>
+                        سلام! من علی سینا شکیبافر هستم، توسعه‌دهندهٔ فول‌استک با بیش از ۵ سال تجربه در طراحی و توسعهٔ
+                        اپلیکیشن‌های وب مدرن. تخصص من در ایجاد رابط‌های کاربری زیبا و کارآمد با استفاده از
+                        تکنولوژی‌هایی مثل React و Vue در فرانت‌اند، و PHP/Laravel و Node.js در بک‌اند است.
+                    </p>
+                    <p>
+                        علاقه‌مند به حل مسائل پیچیده، بهینه‌سازی عملکرد و ایجاد تجربیات کاربری استثنایی هستم.
+                        همچنین در زمینهٔ طراحی رابط کاربری و تجربهٔ کاربری، دسترسی‌پذیری وب و تایپوگرافی فارسی
+                        تخصص دارم. همیشه در تلاش برای یادگیری تکنولوژی‌های جدید و بهبود مهارت‌هایم هستم.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Skills Section - برای تغییر مهارت‌ها و درصدها، این بخش را ویرایش کنید -->
+            <section id="skills" aria-labelledby="skills-title">
+                <div class="section-header">
+                    <h2 id="skills-title">مهارت‌های تخصصی</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>HTML5</span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>CSS3 (Flexbox, Grid)</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>JavaScript (ES6+)</span>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>TypeScript</span>
+                            <span class="skill-percentage">82%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="82"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>React</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Vue.js</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>PHP</span>
+                            <span class="skill-percentage">87%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="87"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Laravel</span>
+                            <span class="skill-percentage">83%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="83"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Node.js & Express</span>
+                            <span class="skill-percentage">78%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="78"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>SQL (MySQL/PostgreSQL)</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Git & GitHub</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Docker</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>طراحی ریسپانسیو و دسترسی‌پذیری</span>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="92"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>UI/UX و تایپوگرافی فارسی</span>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>بهینه‌سازی SEO و عملکرد</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>تست واحد و یکپارچگی</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" aria-labelledby="experience-title">
+                <div class="section-header">
+                    <h2 id="experience-title">تجربه کاری</h2>
+                </div>
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="timeline-header">
+                            <h3 class="timeline-title">توسعه‌دهندهٔ فول‌استک ارشد</h3>
+                            <p class="timeline-company">شرکت تکنوپارس</p>
+                            <p class="timeline-date">مرداد ۱۴۰۱ - تا کنون</p>
+                        </div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>طراحی و توسعهٔ پلتفرم تجارت الکترونیک با React و Laravel برای ۱۰۰,۰۰۰+ کاربر</li>
+                                <li>پیاده‌سازی سیستم پرداخت آنلاین و یکپارچه‌سازی با درگاه‌های بانکی</li>
+                                <li>بهینه‌سازی عملکرد وبسایت که منجر به ۴۰٪ کاهش زمان بارگیری شد</li>
+                                <li>راهبری تیم ۳ نفره توسعه‌دهندگان فرانت‌اند و بک‌اند</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-header">
+                            <h3 class="timeline-title">توسعه‌دهندهٔ فرانت‌اند</h3>
+                            <p class="timeline-company">استودیو طراحی پیکسل</p>
+                            <p class="timeline-date">فروردین ۱۴۰۰ - تیر ۱۴۰۱</p>
+                        </div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>توسعهٔ رابط کاربری ریسپانسیو برای ۲۰+ پروژهٔ مختلف</li>
+                                <li>همکاری نزدیک با تیم طراحی برای پیاده‌سازی دقیق طرح‌ها</li>
+                                <li>بهینه‌سازی وب‌سایت‌ها برای موتورهای جستجو (SEO)</li>
+                                <li>پیاده‌سازی استانداردهای دسترسی‌پذیری وب (WCAG)</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-header">
+                            <h3 class="timeline-title">توسعه‌دهندهٔ جونیور</h3>
+                            <p class="timeline-company">شرکت فناوری‌ آسان</p>
+                            <p class="timeline-date">مهر ۱۳۹۸ - اسفند ۱۳۹۹</p>
+                        </div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>توسعهٔ وب‌سایت‌های شرکتی با HTML، CSS، JavaScript و PHP</li>
+                                <li>نگهداری و به‌روزرسانی سیستم‌های مدیریت محتوا</li>
+                                <li>یادگیری فریم‌ورک‌های مدرن و شرکت در پروژه‌های تیمی</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" aria-labelledby="projects-title">
+                <div class="section-header">
+                    <h2 id="projects-title">پروژه‌های منتخب</h2>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <h3 class="project-title">فروشگاه آنلاین پارسیان</h3>
+                        <p class="project-description">
+                            پلتفرم تجارت الکترونیک کاملاً ریسپانسیو با قابلیت‌های پیشرفته مانند سیستم سفارش‌گیری،
+                            مدیریت موجودی، درگاه پرداخت و پنل مدیریتی جامع. این پروژه برای یکی از بزرگ‌ترین
+                            فروشگاه‌های آنلاین کشور توسعه داده شده است.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://example.com/project1" target="_blank">نمایش آنلاین</a>
+                            <a href="https://github.com/example/project1" target="_blank">کد منبع</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <h3 class="project-title">سیستم مدیریت محتوای خبری</h3>
+                        <p class="project-description">
+                            CMS پیشرفته برای مدیریت و انتشار محتوای خبری با قابلیت‌های SEO،
+                            مدیریت نظرات، سیستم برچسب‌گذاری هوشمند و پنل مدیریتی کاربرپسند.
+                            سیستم حمایت کاملی از زبان فارسی و طراحی RTL دارد.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Express</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://example.com/project2" target="_blank">نمایش آنلاین</a>
+                            <a href="https://github.com/example/project2" target="_blank">کد منبع</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <h3 class="project-title">اپلیکیشن مدیریت پروژه</h3>
+                        <p class="project-description">
+                            ابزار جامع مدیریت پروژه با قابلیت‌های ردیابی زمان، مدیریت تسک‌ها،
+                            گزارش‌گیری پیشرفته و همکاری تیمی. رابط کاربری بصری و داشبورد تحلیلی
+                            برای مدیریت بهتر پروژه‌ها طراحی شده است.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://example.com/project3" target="_blank">نمایش آنلاین</a>
+                            <a href="https://github.com/example/project3" target="_blank">کد منبع</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" aria-labelledby="education-title">
+                <div class="section-header">
+                    <h2 id="education-title">تحصیلات و گواهینامه‌ها</h2>
+                </div>
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="timeline-header">
+                            <h3 class="timeline-title">کارشناسی مهندسی کامپیوتر</h3>
+                            <p class="timeline-company">دانشگاه صنعتی امیرکبیر</p>
+                            <p class="timeline-date">۱۳۹۴ - ۱۳۹۸</p>
+                        </div>
+                        <div class="timeline-content">
+                            <p>معدل: ۱۷.۲۵ از ۲۰ - رتبه ۵ کلاس</p>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-header">
+                            <h3 class="timeline-title">گواهینامه توسعه وب پیشرفته</h3>
+                            <p class="timeline-company">موسسه فناوری اطلاعات ایران</p>
+                            <p class="timeline-date">۱۴۰۰</p>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-header">
+                            <h3 class="timeline-title">گواهینامه AWS Cloud Practitioner</h3>
+                            <p class="timeline-company">Amazon Web Services</p>
+                            <p class="timeline-date">۱۴۰۱</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" aria-labelledby="contact-title">
+                <div class="section-header">
+                    <h2 id="contact-title">تماس با من</h2>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>اطلاعات تماس</h3>
+                        <div class="contact-item">
+                            <span>📧</span>
+                            <a href="mailto:alisina.shakibafar@gmail.com">alisina.shakibafar@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <span>📱</span>
+                            <span>09922385184</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>📍</span>
+                            <span>یزد, ایران</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>🔗</span>
+                            <a href="https://github.com/alishs93" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contact-form" novalidate>
+                        <div class="success-message" id="success-message">
+                            پیام شما با موفقیت ارسال شد! به زودی پاسخ خواهم داد.
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">نام و نام خانوادگی *</label>
+                            <input type="text" id="name" name="name" required aria-describedby="name-error">
+                            <div class="error-message" id="name-error">لطفاً نام خود را وارد کنید</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">ایمیل *</label>
+                            <input type="email" id="email" name="email" required aria-describedby="email-error">
+                            <div class="error-message" id="email-error">لطفاً ایمیل معتبر وارد کنید</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">موضوع</label>
+                            <input type="text" id="subject" name="subject">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">پیام *</label>
+                            <textarea id="message" name="message" required aria-describedby="message-error"></textarea>
+                            <div class="error-message" id="message-error">لطفاً پیام خود را وارد کنید</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">ارسال پیام</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; ۱۴۰۳ علی سینا شکیبافر. تمام حقوق محفوظ است.</p>
+                <p>
+                    این وب‌سایت با رعایت کامل استانداردهای
+                    <a href="https://www.w3.org/WAI/WCAG21/quickref/" target="_blank">دسترسی‌پذیری وب (WCAG 2.1)</a>
+                    طراحی شده است.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', savedTheme);
+        themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            body.setAttribute('data-theme', newTheme);
+            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // Skills Animation
+        const observeSkills = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.skill-progress');
+                    progressBars.forEach(bar => {
+                        const width = bar.getAttribute('data-width');
+                        bar.style.width = width + '%';
+                    });
+                    observeSkills.unobserve(entry.target);
+                }
+            });
+        });
+
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+            observeSkills.observe(skillsSection);
+        }
+
+        // Contact Form Validation
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+
+        function showError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            const errorDiv = document.getElementById(fieldId + '-error');
+            field.style.borderColor = '#dc2626';
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+
+        function hideError(fieldId) {
+            const field = document.getElementById(fieldId);
+            const errorDiv = document.getElementById(fieldId + '-error');
+            field.style.borderColor = 'var(--border-color)';
+            errorDiv.style.display = 'none';
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            let isValid = true;
+
+            // Hide all previous errors
+            ['name', 'email', 'message'].forEach(field => hideError(field));
+
+            // Validate name
+            const name = document.getElementById('name').value.trim();
+            if (!name) {
+                showError('name', 'لطفاً نام خود را وارد کنید');
+                isValid = false;
+            }
+
+            // Validate email
+            const email = document.getElementById('email').value.trim();
+            if (!email) {
+                showError('email', 'لطفاً ایمیل خود را وارد کنید');
+                isValid = false;
+            } else if (!validateEmail(email)) {
+                showError('email', 'لطفاً ایمیل معتبر وارد کنید');
+                isValid = false;
+            }
+
+            // Validate message
+            const message = document.getElementById('message').value.trim();
+            if (!message) {
+                showError('message', 'لطفاً پیام خود را وارد کنید');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Show success message
+                successMessage.style.display = 'block';
+                contactForm.reset();
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }
+        });
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // PDF Download Function
+        // برای تغییر نحوه تولید PDF، این تابع را ویرایش کنید
+        document.getElementById('download-pdf').addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Create a simple PDF content as blob
+            // در پروژه واقعی، می‌توانید از کتابخانه‌هایی مثل jsPDF استفاده کنید
+            const pdfContent = `
+رزومهٔ علی سینا شکیبافر
+توسعه‌دهندهٔ فول‌استک
+
+اطلاعات تماس:
+ایمیل: alisinashakibafar@example.com
+تلفن: +98 912 345 6789
+
+مهارت‌های کلیدی:
+- HTML5, CSS3, JavaScript
+- React, Vue.js
+- PHP, Laravel
+- Node.js, Express
+- SQL, NoSQL
+- Git, Docker
+
+این فایل PDF نمونه است. برای تولید PDF واقعی از محتوای صفحه، 
+از کتابخانه‌هایی مثل jsPDF یا Puppeteer استفاده کنید.
+            `;
+
+            const blob = new Blob([pdfContent], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'resume-alisiyna-shakibafar.pdf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-navigation');
+            }
+        });
+
+        document.addEventListener('mousedown', () => {
+            document.body.classList.remove('keyboard-navigation');
+        });
+    </script>
+</body>
+
+</html>
