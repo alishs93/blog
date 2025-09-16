@@ -1,7 +1,39 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
-<head>
+<head><!-- Live Gradient Background -->
+<div id="gradient-bg"></div>
+<style>
+  html, body {
+      margin:0; padding:0;
+      min-height:100vh;
+      overflow-x:hidden;
+      font-family:Poppins, sans-serif;
+      position:relative;
+  }
+
+  /* پس زمینه زنده */
+  #gradient-bg {
+      position: fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      z-index:-1;
+      background: linear-gradient(120deg, #ffffff, #87cefa); /* روز پیش فرض */
+      transition: background 1s ease;
+  }
+
+  body.dark #gradient-bg {
+      background: linear-gradient(120deg, #000000, #1e3c72); /* شب */
+  }
+</style>
+
+<script>
+
+</script>
+
+</html>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>علی سینا شکیبافر - توسعه‌دهندهٔ فول‌استک و طراح رابط کاربری</title>
@@ -828,30 +860,39 @@
                 break-inside: avoid;
             }
         }
+
         /* Glassmorphism برای تمام article ها */
-article {
-    background: rgba(255, 255, 255, 0.15); /* شفافیت */
-    backdrop-filter: blur(12px);           /* بلور پشت زمینه */
-    -webkit-backdrop-filter: blur(12px);   /* برای Safari */
-    border-radius: 20px;                   /* گوشه‌های گرد */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* حاشیه شفاف */
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* سایه ملایم */
-    padding: 20px;
-    margin: 20px 0;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
+        article {
+            background: rgba(255, 255, 255, 0.15);
+            /* شفافیت */
+            backdrop-filter: blur(12px);
+            /* بلور پشت زمینه */
+            -webkit-backdrop-filter: blur(12px);
+            /* برای Safari */
+            border-radius: 20px;
+            /* گوشه‌های گرد */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            /* حاشیه شفاف */
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            /* سایه ملایم */
+            padding: 20px;
+            margin: 20px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-/* افکت هاور شیشه‌ای */
-article:hover {
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
-    transform: translateY(-2px);
-}
-
+        /* افکت هاور شیشه‌ای */
+        article:hover {
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 
-<body>
+<body  id="gradient-bg">
+
+
+    
     <!-- Skip Navigation Link -->
     <a href="#main-content" class="skip-link">پرش به محتوای اصلی</a>
 
@@ -1545,6 +1586,7 @@ article:hover {
     </footer>
 
     <script>
+
         // Theme Toggle
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
@@ -1553,10 +1595,14 @@ article:hover {
         const savedTheme = localStorage.getItem('theme') || 'light';
         body.setAttribute('data-theme', savedTheme);
         themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        if (localStorage.getItem('theme') != 'light') {
+            body.classList.toggle('dark');
+        }
 
         themeToggle.addEventListener('click', () => {
             const currentTheme = body.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                  body.classList.toggle('dark');
 
             body.setAttribute('data-theme', newTheme);
             themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
@@ -1716,4 +1762,3 @@ article:hover {
     </script>
 </body>
 
-</html>
