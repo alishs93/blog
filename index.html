@@ -828,6 +828,26 @@
                 break-inside: avoid;
             }
         }
+        /* Glassmorphism برای تمام article ها */
+article {
+    background: rgba(255, 255, 255, 0.15); /* شفافیت */
+    backdrop-filter: blur(12px);           /* بلور پشت زمینه */
+    -webkit-backdrop-filter: blur(12px);   /* برای Safari */
+    border-radius: 20px;                   /* گوشه‌های گرد */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* حاشیه شفاف */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* سایه ملایم */
+    padding: 20px;
+    margin: 20px 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* افکت هاور شیشه‌ای */
+article:hover {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+    transform: translateY(-2px);
+}
+
     </style>
 </head>
 
@@ -836,7 +856,7 @@
     <a href="#main-content" class="skip-link">پرش به محتوای اصلی</a>
 
     <!-- Glassmorphism Header -->
-     <br><br><br>
+    <br><br><br>
     <header>
         <a href="#" class="logo">
             <div class="logo-icon">
@@ -855,7 +875,7 @@
                 <li><a href="#contact">تماس</a></li>
             </ul>
             <a href="#contact" class="cta-button">تماس با من</a>
-                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
             <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle mobile menu">
                 <span></span>
                 <span></span>
@@ -1514,7 +1534,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>&copy; ۱۴۰۳ علی سینا شکیبافر. تمام حقوق محفوظ است.</p>
+                <p>&copy; 1404 علی سینا شکیبافر. تمام حقوق محفوظ است.</p>
                 <p>
                     این وب‌سایت با رعایت کامل استانداردهای
                     <a href="https://www.w3.org/WAI/WCAG21/quickref/" target="_blank">دسترسی‌پذیری وب (WCAG 2.1)</a>
